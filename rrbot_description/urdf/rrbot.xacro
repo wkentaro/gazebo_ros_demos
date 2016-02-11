@@ -122,8 +122,14 @@
     </inertial>
   </link>
 
-  <joint name="hokuyo_joint" type="fixed">
-    <axis xyz="0 1 0" />
+  <joint name="hokuyo_joint" type="revolute">
+    <axis>
+      <xyz>0 1 0</xyz>
+      <limit>
+        <upper>0</upper>
+        <lower>0</lower>
+      </limit>
+    </axis>
     <origin xyz="0 0 ${height3 - axel_offset/2}" rpy="0 0 0"/>
     <parent link="link3"/>
     <child link="hokuyo_link"/>
